@@ -33,7 +33,7 @@ module.exports = {
       const token = jwt.sign(
         { id: user._id, email: user.email },
         process.env.JWT_SECRET,
-        { expiresIn: "5d" }
+        // { expiresIn: "5d" }
       );
 
       return helper.success(res, "User created successfully.", { token }, 201);
@@ -61,7 +61,7 @@ module.exports = {
       const token = jwt.sign(
         { id: emailcheck._id, email: emailcheck.email },
         process.env.JWT_SECRET,
-        { expiresIn: "5d" }
+        // { expiresIn: "5d" }
       );
 
       return helper.success(
