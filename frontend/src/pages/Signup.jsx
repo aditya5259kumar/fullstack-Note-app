@@ -87,8 +87,8 @@ const Signup = () => {
     <>
       {/* <Navbar /> */}
 
-      <div className="flex px-4 flex-col min-h-screen items-center justify-center  bg-linear-to-l from-indigo-200 via-violet-300 to-purple-200">
-        <h2 className="text-indigo-700 mb-1 text-3xl  text-center font-extrabold">
+      <div className="flex px-4 flex-col min-h-screen items-center justify-center  bg-yellow-50">
+        <h2 className="text-yellow-700 mb-1 text-3xl  text-center font-extrabold">
           Welcome To Notely
         </h2>
         <p className="text-center text-sm mb-4">
@@ -96,7 +96,7 @@ const Signup = () => {
         </p>
         <div className="sm:w-96 w-full shadow-2xl rounded-2xl bg-white px-7 py-10">
           <form onSubmit={handleSignup}>
-            <h4 className="text-center text-indigo-500 font-bold text-3xl mb-7">
+            <h4 className="text-center text-yellow-500 font-bold text-3xl mb-7">
               Signup
             </h4>
 
@@ -105,7 +105,7 @@ const Signup = () => {
               onChange={(e) => setName(e.target.value)}
               type="text"
               placeholder="Full name"
-              className=" w-full text-sm bg-transparent border  px-5 py-3 rounded-md border-indigo-300 text-gray-600 mb-mt-4 outline-none"
+              className=" w-full text-sm bg-transparent border  px-5 py-3 rounded-md border-gray-400 text-gray-600 mb-mt-4 outline-none"
             />
             {error.name && (
               <p className="mb-1 text-red-500 text-xs mt-1">{error.name}</p>
@@ -116,7 +116,7 @@ const Signup = () => {
               onChange={(e) => setEmail(e.target.value)}
               type="text"
               placeholder="Email"
-              className=" w-full text-sm bg-transparent border  px-5 py-3 rounded-md border-indigo-300 text-gray-600 mb-1 mt-4 outline-none"
+              className=" w-full text-sm bg-transparent border  px-5 py-3 rounded-md border-gray-400 text-gray-600 mb-1 mt-4 outline-none"
             />
             {error.email && (
               <p className="mb-4 text-red-500 text-xs mt-1">{error.email}</p>
@@ -136,8 +136,8 @@ const Signup = () => {
               className={`w-full text-white rounded p-2 my-1 mt-4 transition-all duration-200
   ${
     loading
-      ? "bg-indigo-300 cursor-not-allowed"
-      : "bg-linear-to-r from-purple-600 to-indigo-400 hover:opacity-90"
+      ? "bg-yellow-300 cursor-not-allowed"
+      : "bg-linear-to-r from-yellow-400 to-yellow-700 hover:opacity-90"
   }`}
             >
               {loading ? (
@@ -153,7 +153,7 @@ const Signup = () => {
 
             <p className="text-sm text-center mt-4">
               Already have an Account?{" "}
-              <Link to="/login" className="font-bold text-indigo-600">
+              <Link to="/login" className="font-bold text-yellow-600">
                 Login.
               </Link>
             </p>

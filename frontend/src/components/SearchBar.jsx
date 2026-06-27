@@ -13,6 +13,7 @@ const SearchBar = ({ value, onChange, handleSearch, onClearSearch }) => {
   px-4
   bg-white
   rounded-3xl
+  border border-gray-300
 "
     >
       <input
@@ -32,7 +33,7 @@ const SearchBar = ({ value, onChange, handleSearch, onClearSearch }) => {
 
       {value && (
         <IoMdClose
-          className="text-lg text-indigo-500 text-[24px] cursor-pointer hover:text-indigo-600 shrink-0"
+          className="text-lg text-gray-500 text-[24px] cursor-pointer hover:text-gray-600 shrink-0"
           onClick={onClearSearch}
         />
       )}
@@ -40,7 +41,7 @@ const SearchBar = ({ value, onChange, handleSearch, onClearSearch }) => {
         <TfiLayoutLineSolid />
       </span>
       <FaMagnifyingGlass
-        className=" text-indigo-500 cursor-pointer text-[17px] hover:text-indigo-600 shrink-0"
+        className=" text-gray-500 cursor-pointer text-[17px] hover:text-gray-600 shrink-0"
         onClick={handleSearch}
       />
     </div>

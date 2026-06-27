@@ -15,10 +15,10 @@ const ViewNoteModal = ({ note, onClose }) => {
         className="w-full max-w-3xl bg-white rounded-xl sm:rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative before:content-[''] before:absolute before:top-0 before:left-0 before:w-1 before:h-full before:rounded-l-xl sm:before:rounded-l-2xl max-h-[95vh] sm:max-h-[90vh]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between bg-linear-to-r from-purple-100 to-indigo-100 p-3 sm:p-5 border-b border-indigo-100">
+        <div className="flex items-center justify-between bg-yellow-200 p-3 sm:p-5 border-b border-yellow-100">
           <div className="flex items-center gap-1 sm:gap-3 bg-white/80 backdrop-blur-sm px-2 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-sm">
-            <LuCalendarFold className="text-sm sm:text-base text-indigo-600" />
-            <span className="text-indigo-700 font-semibold text-xs sm:text-sm">
+            <LuCalendarFold className="text-sm sm:text-base text-yellow-600" />
+            <span className="text-yelloe-700 font-semibold text-xs sm:text-sm">
               {new Date(note.createdOn).toLocaleDateString("en-GB", {
                 day: "2-digit",
                 month: "short",
@@ -34,12 +34,6 @@ const ViewNoteModal = ({ note, onClose }) => {
           </div>
 
           <div className="flex items-center gap-2 sm:gap-3">
-            {note.isPinned ? (
-              <RiPushpinFill className="text-xl sm:text-2xl text-red-500" />
-            ) : (
-              <RiPushpinLine className="text-xl sm:text-2xl text-gray-400" />
-            )}
-
             <button
               onClick={onClose}
               className="text-gray-500 hover:text-gray-700 transition-colors bg-white/80 backdrop-blur-sm rounded-full p-1.5 sm:p-2 hover:bg-white"
@@ -71,7 +65,7 @@ const ViewNoteModal = ({ note, onClose }) => {
                 {note.tags.map((tag, index) => (
                   <span
                     key={index}
-                    className="bg-indigo-100 text-indigo-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium"
+                    className="bg-yellow-100 text-yellow-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium"
                   >
                     #{tag}
                   </span>

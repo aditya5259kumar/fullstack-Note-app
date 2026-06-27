@@ -34,7 +34,7 @@ const TagInput = ({ tags, setTags }) => {
           {tags.map((tag, index) => (
             <span
               key={index}
-              className=" bg-indigo-100 flex gap-3 items-center text-indigo-700 px-3 py-1 rounded-2xl text-sm font-medium hover:bg-indigo-600 hover:text-white transition-all duration-200 cursor-pointer"
+              className=" bg-yellow-100 flex gap-3 items-center text-yellow-700 px-3 py-1 rounded-2xl text-sm font-medium hover:bg-yellow-600 hover:text-white transition-all duration-200 cursor-pointer"
             >
               # {tag}
               <button
@@ -55,17 +55,17 @@ const TagInput = ({ tags, setTags }) => {
           value={inputValue}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
-          className=" text-sm bg-indigo-50/50 border border-indigo-200 text-indigo-700 font-medium px-3 py-2 rounded-md outline-none"
+          className=" text-sm bg-yellow-50/50 border border-gray-400 font-medium px-3 py-2 rounded-md outline-none"
           placeholder="Add tags"
         />
 
         <button
-          className=" w-8 h-8 flex items-center justify-center rounded border-2 border-indigo-200 hover:border-indigo-500 hover:border hover:bg-indigo-500 "
+          className="cursor-pointer w-8 h-8 flex items-center justify-center bg-yellow-500 rounded-full border-border-200"
           onClick={() => {
             addNewTag();
           }}
         >
-          <MdAdd className="text-2xl w-full h-full text-indigo-500 hover:text-white" />
+          <MdAdd className="text-2xl w-full h-full text-white" />
         </button>
       </div>
     </div>

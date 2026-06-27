@@ -6,7 +6,6 @@ import { MdStickyNote2 } from "react-icons/md";
 const Navbar = ({ userInfo, searchNotes, ProfileHandler }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
-
   function handleSearch() {
     searchNotes(searchQuery);
   }
@@ -20,7 +19,7 @@ const Navbar = ({ userInfo, searchNotes, ProfileHandler }) => {
     <>
       <div
         className="
-  bg-violet-100 drop-shadow-lg
+  bg-yellow-50 drop-shadow-lg
   px-4 sm:px-6 lg:px-16
   py-2
   flex
@@ -28,7 +27,7 @@ const Navbar = ({ userInfo, searchNotes, ProfileHandler }) => {
   items-center justify-between
 "
       >
-        <h2 className="text-3xl font-bold text-indigo-600 py-2 flex items-center justify-center gap-1">
+        <h2 className="text-3xl font-bold text-yellow-700 py-2 flex items-center justify-center gap-1">
           {" "}
           <span>
             <MdStickyNote2 />
@@ -45,10 +44,7 @@ const Navbar = ({ userInfo, searchNotes, ProfileHandler }) => {
           }}
         />
 
-        <Profile
-          ProfileHandler={ProfileHandler}
-          userInfo={userInfo}
-        />
+        <Profile ProfileHandler={ProfileHandler} userInfo={userInfo} />
       </div>
     </>
   );

@@ -41,13 +41,13 @@ const UserProfile = ({ userInfo, onLogout, setShowProfile }) => {
           className="relative bg-white rounded-2xl shadow-md transition-all duration-300 overflow-hidden w-full max-w-md before:content-[''] before:absolute before:top-0 before:left-0 before:w-1 before:h-full"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="h-32 bg-linear-to-r from-indigo-200 via-violet-200 to-purple-200"></div>
+          <div className="h-32 bg-yellow-100"></div>
 
           <div className="px-6 pb-6">
             {/* Avatar */}
             <div className="flex justify-center -mt-16 mb-4">
               <div className="relative">
-                <div className="w-32 h-32 rounded-full bg-linear-to-r from-indigo-600 to-purple-400 flex items-center justify-center text-white text-4xl font-bold shadow-lg ring-4 ring-white">
+                <div className="w-32 h-32 rounded-full bg-purple-600 flex items-center justify-center text-white text-4xl font-bold shadow-lg ring-4 ring-white">
                   {getInitials(userInfo.name)}
                 </div>
 
@@ -65,7 +65,7 @@ const UserProfile = ({ userInfo, onLogout, setShowProfile }) => {
 
             <div className="space-y-3 border-t border-gray-200 pt-4">
               <div className="flex items-center gap-3 bg-indigo-50/50 px-4 py-3 rounded-lg">
-                <LuMail className="text-xl text-indigo-600" />
+                <LuMail className="text-xl text-yellow-600" />
                 <div className="flex-1 min-w-0">
                   <p className="text-xs text-gray-500 font-medium">Email</p>
                   <p className="text-sm text-gray-700 truncate">
@@ -75,7 +75,7 @@ const UserProfile = ({ userInfo, onLogout, setShowProfile }) => {
               </div>
 
               <div className="flex items-center gap-3 bg-indigo-50/50 px-4 py-3 rounded-lg">
-                <LuCalendarFold className="text-xl text-indigo-600" />
+                <LuCalendarFold className="text-xl text-yellow-600" />
                 <div className="flex-1">
                   <p className="text-xs text-gray-500 font-medium">
                     Member Since

@@ -108,13 +108,13 @@ const AddEditNote = ({ setOpenAddEditModel, getAllNotes, noteToEdit }) => {
       >
         {/* TITLE */}
         <div className="flex flex-col gap-2">
-          <label className="input-label font-bold">TITLE</label>
+          <label className="input-label text-yellow-700 font-bold">TITLE</label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Add note title"
-            className="text-lg font-semibold border border-indigo-200 bg-indigo-50/50 rounded-md text-gray-800 outline-none  px-3 py-1"
+            className="text-lg font-semibold border border-gray-400 bg-yellow-50/50 rounded-md text-gray-800 outline-none  px-3 py-1"
           />
           {error.title && (
             <p className="mb-1 text-red-500 text-xs mt-1">{error.title}</p>
@@ -123,13 +123,13 @@ const AddEditNote = ({ setOpenAddEditModel, getAllNotes, noteToEdit }) => {
 
         {/* CONTENT */}
         <div className="flex flex-col gap-2 mt-4">
-          <label className="input-label font-bold">CONTENT</label>
+          <label className="input-label text-yellow-700 font-bold">CONTENT</label>
           <textarea
             placeholder="Add content to your note"
             value={content}
             onChange={(e) => setContent(e.target.value)}
             rows={8}
-            className="text-sm  bg-indigo-50/50 border border-indigo-200 text-gray-600 outline-none  p-3 rounded-md resize-none"
+            className="text-sm border border-gray-400 bg-yellow-50/50 text-gray-600 outline-none  p-3 rounded-md resize-none"
           />
           {error.content && (
             <p className="mb-1 text-red-500 text-xs mt-1">{error.content}</p>
@@ -138,7 +138,7 @@ const AddEditNote = ({ setOpenAddEditModel, getAllNotes, noteToEdit }) => {
 
         {/* TAGS */}
         <div className="flex flex-col gap-2 mt-6 border-b pb-8 border-gray-200">
-          <label className="input-label font-bold">TAGS</label>
+          <label className="input-label font-bold text-yellow-700">TAGS</label>
           <TagInput tags={tags} setTags={setTags} />
         </div>
 
@@ -152,7 +152,7 @@ const AddEditNote = ({ setOpenAddEditModel, getAllNotes, noteToEdit }) => {
           </button>
 
           <button
-            className="px-4 py-2 transition-all ease-in-out hover:-translate-y-1 bg-indigo-500 text-white text-sm font-medium rounded-md hover:bg-violet-600"
+            className="px-4 py-2 transition-all ease-in-out hover:-translate-y-1 bg-yellow-500 text-white text-sm font-medium rounded-md hover:bg-yellow-600"
             onClick={handleAddNote}
           >
             {noteToEdit ? (

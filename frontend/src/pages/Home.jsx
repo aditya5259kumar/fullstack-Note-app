@@ -117,15 +117,29 @@ const Home = () => {
   const getUserInfo = async () => {
     try {
       const response = await axiosInstance.get("/me");
+
       if (response.data?.data) {
         setUserInfo(response.data.data);
+        return true;
       }
+
+      return false;
     } catch (error) {
       if (error.response?.status === 401) {
         localStorage.clear();
-        navigate("/login");
+        navigate("/login", { replace: true });
       }
+
+      return false;
     }
+  };
+
+  const loadData = async () => {
+    const authenticated = await getUserInfo();
+
+    if (!authenticated) return;
+
+    await getAllNotes();
   };
 
   // get all notes
@@ -141,7 +155,7 @@ const Home = () => {
     } catch (error) {
       if (error.response?.status === 401) {
         localStorage.clear();
-        navigate("/login");
+        navigate("/login", { replace: true });
       } else {
         toast.error("Failed to fetch notes");
       }
@@ -151,9 +165,11 @@ const Home = () => {
   };
 
   useEffect(() => {
-    async function loadData() {
-      await getUserInfo();
-      await getAllNotes();
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      navigate("/login");
+      return;
     }
 
     loadData();
@@ -162,14 +178,14 @@ const Home = () => {
   return (
     <>
       {loading ? (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-violet-50">
-          <div className="w-12 h-12 border-4 border-violet-300 border-t-violet-700 rounded-full animate-spin"></div>
+        <div className="min-h-screen flex flex-col items-center justify-center bg-yellow-50/50">
+          <div className="w-12 h-12 border-4 border-gray-200 border-t-yellow-500 rounded-full animate-spin"></div>
 
-          <p className="mt-6 text-violet-700 font-semibold text-lg">
+          <p className="mt-6 text-yellow-700 font-semibold text-lg">
             Loading your notes...
           </p>
 
-          <p className="text-sm text-violet-500 mt-2">
+          <p className="text-sm text-yellow-500 mt-2">
             Please wait a few seconds
           </p>
         </div>
@@ -198,7 +214,7 @@ const Home = () => {
                     tags={note.tags.map((item, index) => (
                       <span
                         key={index}
-                        className="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-indigo-600 hover:text-white transition-all duration-200"
+                        className="bg-yellow-200 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium hover:bg-yellow-600 hover:text-white transition-all duration-200"
                       >
                         {`#${item}`}
                       </span>
@@ -245,11 +261,11 @@ const Home = () => {
               />
 
               <div className="text-center px-4 max-w-md mx-auto">
-                <p className="text-2xl font-bold text-violet-800">
+                <p className="text-2xl font-bold text-yellow-800">
                   {isSearch ? "No results found!" : "No Notes yet!"}
                 </p>
 
-                <p className="mt-2 text-sm font-semibold text-violet-800">
+                <p className="mt-2 text-sm font-semibold text-yellow-800">
                   {isSearch
                     ? "Try searching for a different keyword."
                     : "Create your first note by clicking the Add button below."}
@@ -262,7 +278,7 @@ const Home = () => {
           <button
             className="cursor-pointer fixed right-6 bottom-6 shadow-2xl hover:-translate-y-1 transition-all
       w-16 h-16 rounded-full flex items-center justify-center
-      bg-linear-to-r from-indigo-600 to-purple-400"
+      bg-linear-to-r from-yellow-400 to-yellow-700"
             onClick={() => {
               setNoteToEdit(null);
               setOpenAddEditModel(true);

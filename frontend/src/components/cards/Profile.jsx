@@ -18,8 +18,8 @@ const Profile = ({ userInfo, ProfileHandler }) => {
     <div className="flex items-center gap-3">
       <div onClick={ProfileHandler}
         className="cursor-pointer w-10 h-10 flex items-center justify-center rounded-full 
-                text-white font-semibold bg-linear-to-r from-purple-600 to-indigo-400 
-                "
+                text-white font-semibold bg-purple-600 
+                hover:shadow-md transition-all hover:scale-105"
       >
         {getInitials(userInfo.name)}
       </div>
